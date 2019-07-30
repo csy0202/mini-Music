@@ -1,0 +1,115 @@
+<!-- pages/video/video.wxml -->
+<!-- 输入框区域 -->
+<view class="searchView">
+  <image class="search_left" src="/images/find/find_mic.png" mode='aspectFit'></image>
+  <view class="search_center">
+    <image class="search_icon" src="/images/find/find_search.png" />
+    <text class="search_placehoder">搜索</text>
+  </view>
+  <!-- <image class="search_right"></image> -->
+</view>
+  <scroll-view class="tabs" scroll-x>
+      <view class="tab_item {{currentIndex == index?'tab_sel':''}}" wx:for='{{tabs}}' wx:key="{{index}}" bindtap='clickIndex' data-index='{{index}}'>{{item.name}}</view>
+  </scroll-view>
+<view class='scene'>
+  <view class='scene_item' wx:for="{{videoList}}" wx:key="{{index}}">
+    <view class='item_view' wx:if="{{item.type == 1}}">
+      <view class='videoView'>
+        <video class='video' src='{{item.data.urlInfo.url}}' controls="{{false}}" enable-play-gesture="{{true}}" show-center-play-btn="{{false}}" bindplay="videoPlay" bindpause="videoPause" bindended="videoEnd" data-index='{{videoIndex}}'></video>
+        <view class='top_title'>
+          <view class='title'>{{item.data.videoGroup[0].name}}</view>
+        </view>
+        <view class='video_bottom'>
+          <view class='player'>
+            <image class='icon' src='/images/find/find_video.png'></image>
+            <view class='count'>{{item.data.playTime}}</view>
+          </view>
+          <view class='playTime'>
+            <image class='icon' src='/images/video/video_1.png'></image>
+            <view class='time'>{{item.data.durationms}}</view>
+          </view>
+        </view>
+        <view class='playIcon'>
+          <!-- <image class='playImg' src='{{videoIndex == index?playUrl:pauseUrl}}'></image> -->
+        </view>
+      </view>
+      <view class='videoTitle'>{{item.data.title}}</view>
+      <view class='videoCreator'>
+        <view class='user_left'>
+          <image class='header' src='{{item.data.creator.avatarUrl}}'></image>
+          <view class='nickName'>{{item.data.creator.nickname}}</view>
+        </view>
+        <view class='user_right'>
+          <view class='praice'>
+            <image class='icon' src='/images/video/video_praise.png'></image>
+            <view class='num'>{{item.data.praisedCount}}</view>
+          </view>
+          <view class='comment'>
+            <image class='icon' src='/images/video/video_cmt.png'></image>
+            <view class='num'>{{item.data.commentCount}}</view>
+          </view>
+          <image class='share' src='/images/video/video_more.png'></image>
+        </view>
+      </view>
+      <view class='bottom'></view>
+    </view>
+    <view class='item_view' wx:if="{{item.type == 2}}">
+      <view class='videoView'>
+        <video class='video' src='{{item.data.urlInfo.url}}' controls="{{false}}" enable-play-gesture="{{true}}" show-center-play-btn="{{false}}" bindplay="videoPlay" bindpause="videoPause" bindended="videoEnd" data-index='{{videoIndex}}'></video>
+        <view class='top_title'>
+          <view class='title'>{{item.data.videoGroup[0].name}}</view>
+        </view>
+        <view class='video_bottom'>
+          <view class='player'>
+            <image class='icon' src='/images/find/find_video.png'></image>
+            <view class='count'>{{item.data.playTime}}</view>
+          </view>
+          <view class='playTime'>
+            <image class='icon' src='/images/video/video_1.png'></image>
+            <view class='time'>{{item.data.durationms}}</view>
+          </view>
+        </view>
+        <view class='playIcon'>
+          <!-- <image class='playImg' src='{{videoIndex == index?playUrl:pauseUrl}}'></image> -->
+        </view>
+      </view>
+      <view class='videoTitle'>{{item.data.title}}</view>
+      <view class='videoCreator'>
+        <view class='user_left'>
+          <image class='header' src='{{item.data.creator.avatarUrl}}'></image>
+          <view class='nickName'>{{item.data.creator.nickname}}</view>
+        </view>
+        <view class='user_right'>
+          <view class='praice'>
+            <image class='icon' src='/images/video/video_praise.png'></image>
+            <view class='num'>{{item.data.praisedCount}}</view>
+          </view>
+          <view class='comment'>
+            <image class='icon' src='/images/video/video_cmt.png'></image>
+            <view class='num'>{{item.data.commentCount}}</view>
+          </view>
+          <image class='share' src='/images/video/video_more.png'></image>
+        </view>
+      </view>
+      <view class='bottom'></view>
+    </view>
+    <view class='item_ext' wx:elif="{{item.type == 4}}">
+      <view class='title'>{{item.data.title}}</view>
+      <scroll-view class="userScrol" scroll-x>
+        <view class="user_card" wx:for='{{item.data.rcmdUsers}}' wx:key="{{index}}">
+          <view class='cardContent'>
+            <view class='headerView' style='background:white url({{item.profile.avatarUrl}}?param=180y180) no-repeat center/180rpx 180rpx'>
+              <image class='flag' wx:if="{{item.profile.vipType > 0}}" src='/images/video/video_vip.png'></image>
+            </view>
+            <view class='name'>{{item.profile.nickname}}</view>
+            <view class='fans'>{{item.profile.followeds}}粉丝</view>
+            <view class='desc'>{{item.slogan}}</view>
+            <view class='contant' style='background-image:url(/images/video/video_add.png)'>关注
+            </view>
+            <view class='del'></view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

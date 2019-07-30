@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/video/video",
+    "pages/my/my",
+    "pages/friend/friend",
+    "pages/account/account",
+    "pages/recommendDaily/recommendDaily",
+    "pages/songList/songList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "网易云音乐",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "custom": false,
+    "color": "#8D8D8D",
+    "selectedColor": "#DC4238",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath": "images/tabbar/discovery.png",
+        "selectedIconPath": "images/tabbar/discovery_prs.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "images/tabbar/video_new.png",
+        "selectedIconPath": "images/tabbar/video_new_prs.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/tabbar/music_new.png",
+        "selectedIconPath": "images/tabbar/music_new_prs.png"
+      },
+      {
+        "pagePath": "pages/friend/friend",
+        "text": "朋友",
+        "iconPath": "images/tabbar/friend.png",
+        "selectedIconPath": "images/tabbar/friend_prs.png"
+      },
+      {
+        "pagePath": "pages/account/account",
+        "text": "账号",
+        "iconPath": "images/tabbar/account.png",
+        "selectedIconPath": "images/tabbar/account_prs.png"
+      }
+    ]
+  }
+}

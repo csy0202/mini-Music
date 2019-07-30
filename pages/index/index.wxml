@@ -1,0 +1,66 @@
+<!-- index.wxml -->
+<!-- 输入框区域 -->
+<view class="searchView">
+  <image class="search_left" src="/images/find/find_mic.png" mode='aspectFit'></image>
+  <view class="search_center">
+    <image class="search_icon" src="/images/find/find_search.png" />
+    <text class="search_placehoder">搜索</text>
+  </view>
+  <image class="search_right"></image>
+</view>
+<view class="container">
+  <!-- 轮播区域 -->
+  <swiper class='banner' indicator-dots autoplay circular interval="3000" duration="500" indicator-active-color='#d53b32' indicator-color='#ffffff'>
+    <block wx:for="{{banner}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.pic}}" class="slide-image" />
+        <view class='{{item.titleColor}} bannerText' hidden='{{item.typeTitle.length == 0 }}'>
+          {{item.typeTitle}}
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 子级入口区域 -->
+  <view class='subIconView'>
+    <navigator class='subItem' wx:for="{{subPages}}" wx:key="{{index}}" url='{{item.pagePath}}'>
+      <image class="item_icon" src="{{item.imageUrl}}" />
+      <text class="item_title">{{item.title}}</text>
+    </navigator>
+  </view>
+  <!-- 新歌推荐 -->
+  <view class="new_recommend">
+    <view class="recommend_header">
+      <view class="songList_title">推荐歌单</view>
+      <view class="songList_squ">歌单广场</view>
+    </view>
+    <view class="recommend_list">
+      <view class="recommend_item" wx:for="{{recommendList}}" wx:key="{{index}}">
+        <image class="recommend_item_cover" src='{{item.picUrl}}?param=200y200'></image>
+        <text class="recommend_item_title" mode="aspectFit">{{item.name}}</text>
+        <view class="bofang">
+          <image class="recommend_icon" src="/images/find/find_video.png"></image>
+          <text class="recommend_count">{{item.playCount}}万</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 新碟|新歌 -->
+  <view class="new_recommend">
+    <view class="recommend_header">
+      <view class="titleView">
+        <view class="{{clickTap?'boldTitle':'defaultTitle'}}" bindtap='clickTitle' data-tap='{{true}}'>新碟</view>
+        <view class='space'></view>
+        <view class="{{clickTap?'defaultTitle':'boldTitle'}}" bindtap='clickTitle' data-tap='{{false}}'>新歌</view>
+      </view>
+
+      <view class="songList_squ">更多新碟</view>
+    </view>
+    <view class="recommend_list">
+      <view class="recommend_item" wx:for="{{clickTap?newAlbum:newSong}}" wx:key="{{index}}">
+        <image class="recommend_item_cover" src='{{item.picUrl}}?param=200y200'></image>
+        <text class="recommend_item_title" mode="aspectFit">{{item.name}}</text>
+        <image class="cover_icon" src="/images/find/find_cover_play2.png" hidden='{{clickTap}}'></image>
+      </view>
+    </view>
+  </view>
+</view>

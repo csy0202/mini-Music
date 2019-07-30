@@ -1,0 +1,34 @@
+<view class='container'>
+  <view class='topview'>
+    <view class='topL'>
+      <image class='icon' src='/images/find/daily_play.png'></image>
+      <view class='title'>播放全部</view>
+    </view>
+    <view class='topR'>
+      <image class='icon' src='/images/find/daily_list.png'></image>
+      <view class='title'>多选</view>
+    </view>
+  </view>
+  <view class='listView'>
+    <view class='item' wx:for='{{recommendSongs}}' wx:key='index' bindtap='clickSong'>
+      <view class='itemL'>
+        <image class='cover' src='{{item.album.blurPicUrl}}'></image>
+        <view class='item_center'>
+          <view class='title_top'>
+            <view class='title'>{{item.name}}</view>
+            
+            <view class='title_ext'>{{item.alias[0]}}</view>
+          </view>
+          <view class='title_bottom'>
+            <view class='sq'>SQ</view>
+            <view class='subTitle'>{{item.artists[0].name}}-{{item.album.name}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='itemR'>
+        <image class='video' src='/images/find/daily_video.png'></image>
+        <image class='more' src='/images/video/video_more.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

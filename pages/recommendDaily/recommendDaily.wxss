@@ -1,0 +1,137 @@
+page {
+  /* background-color: gray; */
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.topview {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin: 0;
+}
+
+.topL {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 20rpx;
+}
+
+.topL .icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.topL .title {
+  color: black;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+
+.topR {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 30rpx;
+}
+
+.topR .icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.topR .title {
+  color: #4b4b4b;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+.listView{
+  width: 100%;
+}
+.item{
+width: 100%;
+height: 120rpx;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.itemL{
+display: flex;
+margin-left: 30rpx;
+align-items: center;
+}
+.cover{
+width: 80rpx;
+height: 80rpx;
+border-radius: 10rpx;
+}
+.item_center{
+display: flex;
+flex-direction: column;
+margin-left: 20rpx;
+}
+.title_top{
+ display: flex;
+ justify-content: flex-start;
+ max-width: 360rpx;
+}
+.title_top .title{
+  color: black;
+  font-size: 30rpx;
+  white-space: nowrap;
+  padding: 0;
+}
+.title_top .title_ext{
+  white-space: nowrap;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #8f8f8f;
+  font-size: 30rpx;
+}
+.title_bottom{
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  max-width: 360rpx;
+}
+.sq{
+  padding: 2rpx 5rpx;
+  border: #f84242 solid 1rpx;
+  border-radius: 6rpx;
+  font-size: 12rpx;
+  color: #f84242;
+  box-sizing: border-box;
+}
+.subTitle{
+  color: #888;
+  font-size: 23rpx;
+  white-space: nowrap;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-left: 5rpx;
+}
+.itemR{
+ display: flex;
+ align-items: center;
+ height: 100%;
+ margin-right: 30rpx;
+}
+.video{
+ width: 50rpx;
+ height: 50rpx;
+}
+.more{
+width: 50rpx;
+ height: 50rpx;
+ margin-left: 20rpx;
+}
