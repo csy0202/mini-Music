@@ -1,0 +1,3 @@
+  <scroll-view class="tabs" scroll-x>
+      <view class="tab_item {{currentIndex == index?'tab_sel':''}}" wx:for='{{tabs}}' wx:key="{{index}}" bindtap='clickTab' data-index='{{index}}'>{{item.name}}</view>
+  </scroll-view>

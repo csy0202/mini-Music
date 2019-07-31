@@ -8,9 +8,10 @@
   </view>
   <!-- <image class="search_right"></image> -->
 </view>
-  <scroll-view class="tabs" scroll-x>
+<!-- <scroll-view class="tabs" scroll-x>
       <view class="tab_item {{currentIndex == index?'tab_sel':''}}" wx:for='{{tabs}}' wx:key="{{index}}" bindtap='clickIndex' data-index='{{index}}'>{{item.name}}</view>
-  </scroll-view>
+  </scroll-view> -->
+<c-tabs tabs='{{tabs}}' bind:clickIndex="clickIndex"></c-tabs>
 <view class='scene'>
   <view class='scene_item' wx:for="{{videoList}}" wx:key="{{index}}">
     <view class='item_view' wx:if="{{item.type == 1}}">

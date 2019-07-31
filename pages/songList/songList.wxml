@@ -1,2 +1,1 @@
-<!--pages/songList/songList.wxml-->
-<text>pages/songList/songList.wxml</text>
+<c-tabs tabs='{{hotList}}' bind:clickIndex="clickIndex"></c-tabs>

@@ -36,7 +36,7 @@ Page({
   },
   clickIndex(e){
     //  console.log(e);
-    const index = e.currentTarget.dataset.index;
+    const index = e.detail;
     this.setData({
       currentIndex:index
     })

@@ -1,0 +1,36 @@
+/* component/tabs/tabs.wxss */
+.tabs {
+  /* top: 75rpx; */
+  height: 88rpx;
+  /* height: 100%; */
+  white-space: nowrap;
+  position: fixed;
+  z-index: 999;
+  background-color: white;
+  border-bottom:#f7f7f7 solid 4rpx;
+
+}
+
+.tab_item {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+  /* border-bottom: #FF3238 solid 4rpx; */
+  height: 88rpx;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: black;
+}
+
+.tab_sel {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+  border-bottom: #ff3238 solid 4rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #ff3238;
+}
