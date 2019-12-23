@@ -1,0 +1,86 @@
+.container {
+  padding: 0;
+  margin: 0;
+}
+
+.itemView {
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 33rpx;
+}
+
+.item_view {
+  width: 100%;
+  margin-top: 25rpx;
+}
+
+.topview {
+  width: 100%;
+}
+
+.list {
+  width: 690rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20rpx;
+  /* background-color: red; */
+}
+
+.iconView {
+  width: 215rpx;
+  height: 215rpx;
+  border-radius: 15rpx;
+  position: relative;
+}
+
+.icon {
+  width: 215rpx;
+  height: 215rpx;
+  border-radius: 15rpx;
+}
+
+.desc {
+  position: absolute;
+  left: 12rpx;
+  bottom: 15rpx;
+  font-size: 22rpx;
+  color: white;
+}
+
+.top_right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+  /* background-color: red; */
+  width: 445rpx;
+}
+
+.trackview {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 25rpx;
+  line-height: 60rpx;
+}
+
+.bottomview {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col {
+  width: 215rpx;
+  height: 310rpx;
+  margin-bottom: 20rpx;
+}
+.item_title{
+  font-size: 25rpx;
+  margin-top: 12rpx;
+}

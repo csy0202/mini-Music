@@ -1,0 +1,64 @@
+<view class='container'>
+<navibar class='naviBar'></navibar>
+  <view class="top_view">
+    <image class="top_bgc" mode="aspectFill" src="{{playList.backgroundCoverUrl}}"></image>
+    <view class="top_t">
+      <view class="top_text">
+        <view class='top_title' style="margin-top:{{naviH+20}}rpx">{{playList.name}}</view>
+        <view class="top_update">{{playList.updateFrequency}}</view>
+        <text class="top_src">{{playList.description}}</text>
+      </view>
+      <view class="top_func">
+        <view class="top_item">
+          <image class="top_img" src="/images/list/list_cmt.png"></image>
+          <view class="top_btn_title">{{playList.commentCount}}</view>
+        </view>
+        <view class="top_item">
+          <image class="top_img" src="/images/list/list_share.png"></image>
+          <view class="top_btn_title">{{playList.shareCount}}</view>
+        </view>
+        <view class="top_item">
+          <image class="top_img" src="/images/list/list_dld.png"></image>
+          <view class="top_btn_title">下载</view>
+        </view>
+        <view class="top_item">
+          <image class="top_img" src="/images/list/list_multi.png"></image>
+          <view class="top_btn_title">多选</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='topview'>
+    <view class='topL' bindtap='clickSongList'>
+      <image class='icon' src='/images/find/daily_play.png'></image>
+      <view class='title'>播放全部</view>
+    </view>
+    <view class='topR'>
+      <image class='icon' src='/images/find/daily_list.png'></image>
+      <view class='title'>多选</view>
+    </view>
+  </view>
+  <view class='listView'>
+    <view class='item' wx:for='{{recommendSongs}}' wx:key='index' bindtap='clickSong' data-item='{{[item.id]}}'>
+      <view class='itemL'>
+        <!-- <image class='cover' src='{{item.album.blurPicUrl}}'></image> -->
+        <view class="index">{{index+1}}</view>
+        <view class='item_center'>
+          <view class='title_top'>
+            <view class='title'>{{item.name}}</view>
+
+            <view class='title_ext'>{{item.alias[0]}}</view>
+          </view>
+          <view class='title_bottom'>
+            <view class='sq'>SQ</view>
+            <view class='subTitle'>{{item.ar[0].name}}-{{item.al.name}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='itemR'>
+        <image class='video' src='/images/find/daily_video.png'></image>
+        <image class='more' src='/images/video/video_more.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

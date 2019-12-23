@@ -30,6 +30,23 @@ Page({
       }
     })
   },
+  clickSong(e){
+    console.log('item',e);
+    let arr = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '/pages/player/player?list=' + JSON.stringify(arr),
+    })
+  },
+  clickSongList(){
+    let arr = [];
+    this.data.recommendSongs.forEach(item=>{
+       arr.push(item.id);
+    })
+    // let arr = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '/pages/player/player?list=' + JSON.stringify(arr),
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

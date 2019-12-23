@@ -1,0 +1,4 @@
+<view class='naviBar' style='height:{{naviH}}rpx'>
+  <image class="back" src="/images/list/navi_back.png" style="margin-top:{{backT}}rpx"></image>
+  <view class="title" style="margin-top:{{backT}}rpx">官方曲库</view>
+</view>

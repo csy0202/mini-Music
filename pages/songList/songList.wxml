@@ -1,1 +1,2 @@
 <c-tabs tabs='{{hotList}}' bind:clickIndex="clickIndex"></c-tabs>
+<c-col  datas = '{{songList}}' type ='2'></c-col>

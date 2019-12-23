@@ -6,7 +6,10 @@
     "pages/friend/friend",
     "pages/account/account",
     "pages/recommendDaily/recommendDaily",
-    "pages/songList/songList"
+    "pages/songList/songList",
+    "pages/rankList/rankList",
+    "pages/player/player",
+    "pages/songListDetail/songListDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -53,5 +56,9 @@
         "selectedIconPath": "images/tabbar/account_prs.png"
       }
     ]
-  }
+  },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ]
 }

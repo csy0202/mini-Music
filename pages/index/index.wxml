@@ -33,7 +33,8 @@
       <view class="songList_title">推荐歌单</view>
       <view class="songList_squ">歌单广场</view>
     </view>
-    <view class="recommend_list">
+    <c-col datas = '{{recommendList}}' type ='0' bind:clickSongListItem='clickSongListItem'></c-col>
+    <!-- <view class="recommend_list">
       <view class="recommend_item" wx:for="{{recommendList}}" wx:key="{{index}}">
         <image class="recommend_item_cover" src='{{item.picUrl}}?param=200y200'></image>
         <text class="recommend_item_title" mode="aspectFit">{{item.name}}</text>
@@ -42,7 +43,7 @@
           <text class="recommend_count">{{item.playCount}}万</text>
         </view>
       </view>
-    </view>
+    </view> -->
   </view>
   <!-- 新碟|新歌 -->
   <view class="new_recommend">
@@ -55,12 +56,13 @@
 
       <view class="songList_squ">更多新碟</view>
     </view>
-    <view class="recommend_list">
+    <!-- <view class="recommend_list">
       <view class="recommend_item" wx:for="{{clickTap?newAlbum:newSong}}" wx:key="{{index}}">
         <image class="recommend_item_cover" src='{{item.picUrl}}?param=200y200'></image>
         <text class="recommend_item_title" mode="aspectFit">{{item.name}}</text>
         <image class="cover_icon" src="/images/find/find_cover_play2.png" hidden='{{clickTap}}'></image>
       </view>
-    </view>
+    </view> -->
+    <c-col datas = '{{clickTap?newAlbum:newSong}}' type ='1' clickTap = '{{clickTap}}'></c-col>
   </view>
 </view>

@@ -1,0 +1,19 @@
+.naviBar{
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.back{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 15rpx;
+}
+.title{
+  margin-left: 110rpx;
+  width: 380rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: white;
+}

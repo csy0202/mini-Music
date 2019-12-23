@@ -1,0 +1,27 @@
+<view class='container'>
+  <view class='itemView' wx:for="{{ranks}}" wx:key="index">
+    <view class='title'>{{item.name}}</view>
+    <view class='item_view'>
+      <view class='topview' wx:if='{{index == 0}}'>
+        <view class='list' wx:for="{{item.list}}" wx:for-item="itemsub" wx:for-index='idx' wx:key="idx">
+          <view class='iconView'>
+            <image class='icon' src='{{itemsub.coverImgUrl}}'></image>
+            <view class='desc'>{{itemsub.updateFrequency}}</view>
+          </view>
+          <view class='top_right'>
+            <view class='trackview' wx:for='{{itemsub.tracks}}' wx:for-item="track" wx:for-index='ind' wx:key="ind">{{ind+1}}.{{track.first}}-{{track.second}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='bottomview' wx:if='{{index != 0}}'>
+        <view class='col' wx:for="{{item.list}}" wx:for-item="itemsub" wx:for-index='idx' wx:key="idx">
+          <view class='iconView'>
+            <image class='icon' src='{{itemsub.coverImgUrl}}'></image>
+            <view class='desc'>{{itemsub.updateFrequency}}</view>
+          </view>
+          <view class='item_title'>{{itemsub.name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

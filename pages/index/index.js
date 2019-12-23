@@ -21,7 +21,7 @@ Page({
       {
         title: '排行榜',
         imageUrl: '/images/find/icon_3.png',
-        pagePath: ''
+        pagePath: '/pages/rankList/rankList'
       },
       {
         title: '电台',
@@ -76,7 +76,14 @@ Page({
       if (res.code === 200) { //更加严谨
         let list = res.result.slice(0, 6);
        list.forEach(item => {
-         item.playCount = parseInt(item.playCount / 10000);
+         let result = item.playCount;
+         if (item.playCount > 100000000){
+           let num = parseFloat(item.playCount / 100000000);
+           result = Math.round(num * 10) / 10 + '亿';
+         } else if (item.playCount > 10000){
+           result = parseInt(item.playCount / 10000) + '万';
+         }
+         item.playCount = result;
        })
         this.setData({ // 只取数组的前6个数据
           recommendList: list
@@ -106,6 +113,13 @@ Page({
           newSong: songs
         })
       }
+    })
+  },
+  clickSongListItem(e){
+    console.log('clickSongListItem',e);
+    // let arr = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '/pages/songListDetail/songListDetail?id=' + e.detail.id,
     })
   },
   /**

@@ -1,6 +1,6 @@
 <view class='container'>
   <view class='topview'>
-    <view class='topL'>
+    <view class='topL' bindtap='clickSongList'>
       <image class='icon' src='/images/find/daily_play.png'></image>
       <view class='title'>播放全部</view>
     </view>
@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class='listView'>
-    <view class='item' wx:for='{{recommendSongs}}' wx:key='index' bindtap='clickSong'>
+    <view class='item' wx:for='{{recommendSongs}}' wx:key='index' bindtap='clickSong' data-item='{{[item.id]}}'>
       <view class='itemL'>
         <image class='cover' src='{{item.album.blurPicUrl}}'></image>
         <view class='item_center'>

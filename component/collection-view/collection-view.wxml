@@ -1,0 +1,12 @@
+<view class="recommend_list">
+  <view class="recommend_item" wx:for="{{datas}}" wx:key="{{index}}" bindtap="onTap" data-item="{{item}}">
+    <image class="recommend_item_cover" wx:if ="{{type == 0 || type == 1}}"  src='{{item.picUrl}}?param=200y200'></image>
+    <image class="recommend_item_cover" wx:if ="{{type == 2}}"  src='{{item.coverImgUrl}}?param=200y200'></image>
+    <text class="recommend_item_title" mode="aspectFit">{{item.name}}</text>
+    <view class="bofang" wx:if = "{{type == 0 || type == 2}}}">
+      <image class="recommend_icon" src="/images/find/find_video.png"></image>
+      <text class="recommend_count">{{item.playCount}}</text>
+    </view>
+    <image class="cover_icon" wx:if = "{{type == 1}}" src="/images/find/find_cover_play2.png" hidden='{{clickTap}}'></image>
+  </view>
+</view>

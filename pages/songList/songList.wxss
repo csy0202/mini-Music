@@ -1,1 +1,5 @@
 /* pages/songList/songList.wxss */
+c-col{
+  top: 105rpx;
+  position: absolute;
+}

@@ -41,7 +41,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -61,6 +61,20 @@
 					"id": -1,
 					"name": "歌单",
 					"pathName": "pages/songList/songList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "排行榜",
+					"pathName": "pages/rankList/rankList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "歌单页",
+					"pathName": "pages/songListDetail/songListDetail",
 					"scene": null
 				}
 			]

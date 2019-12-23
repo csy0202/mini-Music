@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "c-tabs": "../../component/tabs/tabs"
+    "c-tabs": "../../component/tabs/tabs",
+    "c-col": "../../component/collection-view/collection-view"
   }
 }

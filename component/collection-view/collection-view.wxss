@@ -1,0 +1,66 @@
+/* component/collection-view/collection-view.wxss */
+.recommend_list{
+  width: 100%;
+  padding: 15rpx 0rpx 15rpx 30rpx;
+  /* background-color: skyblue; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  box-sizing: border-box;
+  
+}
+.recommend_item{
+ width: 216rpx;
+ height: 330rpx;
+ position: relative;
+ margin-right: 20rpx;
+ /* background-color: red; */
+
+}
+.recommend_item_cover{
+  width: 216rpx;
+  height:216rpx ;
+  border-radius: 10rpx;
+}
+.recommend_item_title{
+  font-size: 26rpx;
+   width:100%;
+  word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.bofang{
+  position: absolute;
+  top: 15rpx;
+  width: 100%;
+  height: 30rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* background-color: rgba(0, 0, 0, 0.01); */
+}
+.recommend_icon{
+  width: 30rpx;
+  height: 30rpx;
+  /* background-color: green; */
+}
+.recommend_count{
+ color: white;
+ font-size: 28rpx;
+ margin-left: 10rpx;
+ margin-right: 10rpx;
+}
+.cover_icon{
+  position: absolute;
+  top: 150rpx;
+  left:150rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  padding: 10rpx 8rpx 10rpx 12rpx;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
+}

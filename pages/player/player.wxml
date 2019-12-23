@@ -1,0 +1,75 @@
+<view class='container'>
+  <!-- 背景图 虚化 -->
+  <image class='bgcImg' src='{{currentSong.al.picUrl}}' mode='aspectFill'></image>
+  <view class='main'>
+    <view class="topView" wx:if="{{showLrc}}" bindtap="clickTopView" data-show="{{false}}">
+      <scroll-view class="scrol"  scroll-y="true" scroll-with-animation='true' scroll-top='{{marginTop}}rpx'>
+      <view class='contentText'>
+           <block wx:for='{{lrcArr}}'>
+               <view class="{{currentLine == index ? 'currentLine' : 'line'}}">{{item[1]}}</view>
+            </block>
+       </view>
+</scroll-view>
+    </view>
+    <view class='topView' wx:if="{{!showLrc}}" bindtap="clickTopView" data-show="{{true}}">
+      <!-- 旋转图片 -->
+      <view class='dis_img'>
+        <image class='dis_needl' src='../../images/player/play_needle.png'></image>
+        <view class='quan_view'>
+          <image class='quan' src='../../images/player/play_disc.png'></image>
+          <image id='image' class="album {{isPlay?'rotating':'rotate-pause'}}" src="{{currentSong.al.picUrl}}"></image>
+        </view>
+      </view>
+      <view class="quan_fun">
+        <image class='fun_img' src='../../images/player/play_love.png'></image>
+        <image class='fun_img' src='../../images/player/play_dld.png'></image>
+        <image class='fun_img' src='../../images/player/play_djreward.png'></image>
+        <image class='fun_img' src='../../images/player/play_cmt.png'></image>
+        <image class='fun_img' src='../../images/player/play_more.png'></image>
+      </view>
+    </view>
+    <view class='fun_view' style="padding-bottom:{{isIpx?68:0}}rpx">
+      <view class="fun_top">
+        <view class="time time_l">{{timeL}}</view>
+        <slider class="slider" bindchange="sliderChange" value='{{sliderValue}}' min="0" max="{{currentSong.dt}}" block-size='12' activeColor='#fff' />
+        <view class="time">{{timeR}}</view>
+      </view>
+      <!-- 操作面板 -->
+      <view class="fun_bottom">
+        <image class='fun_Bimg' src='../../images/player/play_{{playImgArr[orderIdx]}}.png' bindtap="clickLoop" data-idx="{{orderIdx}}"></image>
+        <image class='fun_Nimg' src='../../images/player/play_prev.png' bindtap='clickPre'></image>
+        <image class='fun_Pimg' src='../../images/player/play_{{isPlay?"play":"pause"}}.png' bindtap="clickPlayOrPause"></image>
+        <image class='fun_Nimg' src='../../images/player/play_next.png' bindtap='clickNext'></image>
+        <image class='fun_Bimg' src='../../images/player/play_src.png' bindtap="clickShowPop"></image>
+      </view>
+    </view>
+  </view>
+  <view class="popView {{isShowPop?'showPop':'hiddenPop'}}" wx:if='{{isShowPop}}'>
+    <view class="pop_top">
+      <view class="pop_l">
+        <image class='pop_img' src='../../images/player/playlist_icn_{{playImgArr[orderIdx]}}.png' bindtap="clickLoop" data-idx="{{orderIdx}}"></image>
+        <view class="pop_title">{{titleArr[orderIdx]}}({{titleArr.length}})</view>
+      </view>
+      <view class="pop_l">
+        <view style="display:flex;flex-direction: row;align-items: center;margin-right: 50rpx;">
+          <image class='pop_img' src='../../images/player/playlist_fav.png'></image>
+          <view class="pop_title">收藏全部</view>
+        </view>
+        <image class='pop_img' style="margin-right: 30rpx;" src='../../images/player/playlist_dlt.png'></image>
+      </view>
+    </view>
+    <view class="pop_list">
+      <view class="pop_item" wx:for="{{songList}}" wx:key="{{item.id}}" bindtap="clickItem" data-idx='{{index}}'>
+        <view class="item_L {{item.id == currentSong.id?'playing':''}}">
+          <image class='pop_vol' src='../../images/player/playlist_volume.png' wx:if="{{item.id == currentSong.id}}" />
+          <view class="item_title">{{item.name}}</view>
+          <view class="item_singer">-{{item.ar[0].name}}</view>
+        </view>
+        <image class='pop_img' src='../../images/player/playlist_close.png' bindtap="" />
+      </view>
+    </view>
+    <view class="pop_close" style="padding-bottom:{{isIpx?68:0}}rpx" bindtap="clickClosePop">
+      关闭
+    </view>
+  </view>
+</view>

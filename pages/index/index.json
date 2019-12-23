@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    
+    "c-col": "../../component/collection-view/collection-view"
   }
 }
